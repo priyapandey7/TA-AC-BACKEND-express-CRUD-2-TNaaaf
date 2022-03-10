@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>List of all books</h1>
+  </header>
+  <main>
+    <ul>
+      <% if(books.length){ %>
+        <% books.map(book =>{ %>
+          <li>
+            <a href="/books/<%= book.id %>">
+              <h2>Title: <%= book.title %></h2>
+            </a>
+              <h2>Author: <%= book.name %></h2>
+            <a href="/books/new">
+            <button>Add Book</button>
+        </a>
+          </li>
+     <% }) %>
+     <% } else{ %>
+        <h2>books Presents</h2>
+        <a href="/books/new" class="btn"role="button">Add Book</a>
+        <% } %> 
+     
+    </ul>
+  </main>
+</body>
+</html>
